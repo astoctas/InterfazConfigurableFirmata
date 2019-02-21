@@ -1,2 +1,5 @@
-/.vscode
-/*.code-workspace
+.pio
+.pioenvs
+.piolibdeps
+.clang_complete
+.gcc-flags.json
