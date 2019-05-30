@@ -28,11 +28,16 @@ I2CFirmata i2c;
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
 
-#include <AccelStepperFirmata.h>
-AccelStepperFirmata stepper;
-
+#if defined(_L293SHIELD_)
+#include <InterfazL293DShieldFirmata.h>
+InterfazL293DShieldFirmata l293d;
+#else
 #include <InterfazL293DFirmata.h>
 InterfazL293DFirmata l293d;
+#endif
+
+#include <AccelStepperFirmata.h>
+AccelStepperFirmata stepper;
 
 #include <InterfazLCDFirmata.h>
 InterfazLCDFirmata lcd;
