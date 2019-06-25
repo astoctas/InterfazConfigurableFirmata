@@ -28,14 +28,6 @@ I2CFirmata i2c;
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
 
-#if defined(_L293SHIELD_)
-#include <InterfazL293DShieldFirmata.h>
-InterfazL293DShieldFirmata l293d;
-#else
-#include <InterfazL293DFirmata.h>
-InterfazL293DFirmata l293d;
-#endif
-
 #include <AccelStepperFirmata.h>
 AccelStepperFirmata stepper;
 
@@ -79,13 +71,14 @@ void initFirmata()
   firmataExt.addFeature(digitalInput);
   firmataExt.addFeature(digitalOutput);
   firmataExt.addFeature(analogInput);
+  #ifdef HAS_LCD
   firmataExt.addFeature(lcd);  // PONER JUSTO ANTES DE LOS SYSEX
+  #endif
   firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
   firmataExt.addFeature(stepper);
-  firmataExt.addFeature(l293d);
   firmataExt.addFeature(reporting);
   firmataExt.addFeature(interfaz); // PONER AL FINAL DE LA LISTA
 
