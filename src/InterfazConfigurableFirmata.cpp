@@ -25,6 +25,9 @@ ServoFirmata servo;
 #include <I2CFirmata.h>
 I2CFirmata i2c;
 
+#include <PingFirmata.h>
+PingFirmata ping;
+
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
 
@@ -76,6 +79,7 @@ void initFirmata()
   #endif
   firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
+  firmataExt.addFeature(ping);
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
   firmataExt.addFeature(stepper);
