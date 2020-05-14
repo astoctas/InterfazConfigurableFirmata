@@ -3,6 +3,7 @@
  * Mon Jul 23 2018 18:44:05 GMT-0400 (EDT)
  */
 
+
 #include <ConfigurableFirmata.h>
 
 #include <DigitalInputFirmata.h>
@@ -28,6 +29,9 @@ I2CFirmata i2c;
 #include <PingFirmata.h>
 PingFirmata ping;
 
+#include <PixelFirmata.h>
+PixelFirmata pixel;
+
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
 
@@ -40,6 +44,11 @@ InterfazLCDFirmata lcd;
 #include <InterfazFirmata.h>
 InterfazFirmata interfaz;
 
+/*
+#include <StringFirmata.h>
+StringFirmata string;
+*/
+
 #include <FirmataExt.h>
 FirmataExt firmataExt;
 
@@ -47,6 +56,8 @@ FirmataExt firmataExt;
 
 #include <FirmataReporting.h>
 FirmataReporting reporting;
+
+
 
 void systemResetCallback()
 {
@@ -80,10 +91,12 @@ void initFirmata()
   firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
   firmataExt.addFeature(ping);
+  firmataExt.addFeature(pixel);
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
   firmataExt.addFeature(stepper);
   firmataExt.addFeature(reporting);
+  //firmataExt.addFeature(string);
   firmataExt.addFeature(interfaz); // PONER AL FINAL DE LA LISTA
 
   Firmata.attach(SYSTEM_RESET, systemResetCallback);
