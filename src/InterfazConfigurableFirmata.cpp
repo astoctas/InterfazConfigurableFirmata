@@ -37,8 +37,14 @@ OneWireFirmata oneWire;
 
 #if defined(_L293SHIELD_)
   #include <InterfazL293DShieldFirmata.h>
-  InterfazL293DShieldFirmata l293d;
+  InterfazL293DShieldFirmata motor;
 #endif
+
+#if defined(_RASTI_)
+  #include <InterfazRastiDCFirmata.h>
+  InterfazRastiDCFirmata motor;
+#endif
+
 
 #include <AccelStepperFirmata.h>
 AccelStepperFirmata stepper;
@@ -101,7 +107,10 @@ void initFirmata()
   firmataExt.addFeature(oneWire);
   firmataExt.addFeature(stepper);
 #if defined(_L293SHIELD_)
-  firmataExt.addFeature(l293d);
+  firmataExt.addFeature(motor);
+#endif
+#if defined(_RASTI_)
+  firmataExt.addFeature(motor);
 #endif
   firmataExt.addFeature(reporting);
   //firmataExt.addFeature(string);
