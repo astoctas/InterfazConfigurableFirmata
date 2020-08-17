@@ -35,6 +35,11 @@ PixelFirmata pixel;
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
 
+#if defined(_L293SHIELD_)
+  #include <InterfazL293DShieldFirmata.h>
+  InterfazL293DShieldFirmata l293d;
+#endif
+
 #include <AccelStepperFirmata.h>
 AccelStepperFirmata stepper;
 
@@ -85,7 +90,7 @@ void initFirmata()
   firmataExt.addFeature(digitalInput);
   firmataExt.addFeature(digitalOutput);
   firmataExt.addFeature(analogInput);
-  #ifdef HAS_LCD
+  #ifdef _LCD_
   firmataExt.addFeature(lcd);  // PONER JUSTO ANTES DE LOS SYSEX
   #endif
   firmataExt.addFeature(analogOutput);
@@ -95,6 +100,9 @@ void initFirmata()
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
   firmataExt.addFeature(stepper);
+#if defined(_L293SHIELD_)
+  firmataExt.addFeature(l293d);
+#endif
   firmataExt.addFeature(reporting);
   //firmataExt.addFeature(string);
   firmataExt.addFeature(interfaz); // PONER AL FINAL DE LA LISTA

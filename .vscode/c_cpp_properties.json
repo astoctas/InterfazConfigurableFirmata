@@ -1,0 +1,70 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/include",
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/src",
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/ConfigurableFirmata/src",
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/ws2812",
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/lightws2812",
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/LiquidCrystal_PCF8574/src",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/.pio/libdeps/uno/Servo_ID883/src",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/variants/standard",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "/home/alejandro/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/include",
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/src",
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/ConfigurableFirmata/src",
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/ws2812",
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/lightws2812",
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/lib/LiquidCrystal_PCF8574/src",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/.pio/libdeps/uno/Servo_ID883/src",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "/home/alejandro/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "/home/alejandro/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=40304",
+                "ARDUINO_AVR_UNO",
+                "_L293SHIELD_",
+                "_LCD_",
+                "MAX_DC_OUTPUTS=4",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "intelliSenseMode": "clang-x64",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "/home/alejandro/.platformio/packages/toolchain-atmelavr/bin/avr-gcc",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

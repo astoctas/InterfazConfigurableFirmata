@@ -1,6 +1,6 @@
 [submodule "lib/ConfigurableFirmata"]
 	path = lib/ConfigurableFirmata
-	url = https://github.com/astoctas/ConfigurableFirmata.git
+	url = git@github.com:astoctas/ConfigurableFirmata.git
 [submodule "lib/LiquidCrystal_PCF8574"]
 	path = lib/LiquidCrystal_PCF8574
 	url = https://github.com/mathertel/LiquidCrystal_PCF8574.git
