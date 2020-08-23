@@ -4,3 +4,9 @@
 [submodule "lib/LiquidCrystal_PCF8574"]
 	path = lib/LiquidCrystal_PCF8574
 	url = https://github.com/mathertel/LiquidCrystal_PCF8574.git
+[submodule "lib/Adafruit_PCF8591"]
+	path = lib/Adafruit_PCF8591
+	url = git@github.com:adafruit/Adafruit_PCF8591.git
+[submodule "lib/Adafruit_BusIO"]
+	path = lib/Adafruit_BusIO
+	url = git@github.com:adafruit/Adafruit_BusIO.git

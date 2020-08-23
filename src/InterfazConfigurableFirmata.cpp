@@ -45,6 +45,11 @@ OneWireFirmata oneWire;
   InterfazRastiDCFirmata motor;
 #endif
 
+#if defined(_PCF8591_)
+  #include <InterfazPCF8591Firmata.h>
+  InterfazPCF8591Firmata PCF8591;
+#endif
+
 
 #include <AccelStepperFirmata.h>
 AccelStepperFirmata stepper;
@@ -99,13 +104,16 @@ void initFirmata()
   #ifdef _LCD_
   firmataExt.addFeature(lcd);  // PONER JUSTO ANTES DE LOS SYSEX
   #endif
-  firmataExt.addFeature(analogOutput);
+    firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
   firmataExt.addFeature(ping);
   firmataExt.addFeature(pixel);
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
   firmataExt.addFeature(stepper);
+#if defined(_PCF8591_)
+  firmataExt.addFeature(PCF8591);
+#endif
 #if defined(_L293SHIELD_)
   firmataExt.addFeature(motor);
 #endif
@@ -140,7 +148,11 @@ void loop()
   if (reporting.elapsed()) {
     analogInput.report();
     i2c.report();
+    #if defined(_PCF8591_)
+      PCF8591.report();
+    #endif
   }
+
 
   stepper.update();
 }
