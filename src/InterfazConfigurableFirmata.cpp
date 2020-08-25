@@ -3,6 +3,10 @@
  * Mon Jul 23 2018 18:44:05 GMT-0400 (EDT)
  */
 
+#define L293D_DATA            0x02 // control a dc motor
+#define LCD_DATA              0x03 // control an lcd display
+#define PCF8591_DATA            0x04 // control an PCF8591
+
 
 #include <ConfigurableFirmata.h>
 
