@@ -22,7 +22,11 @@ AnalogInputFirmata analogInput;
 #include <AnalogOutputFirmata.h>
 AnalogOutputFirmata analogOutput;
 
-#include <Servo.h>
+#if defined(_ESP32_)
+  #include <ESP32Servo.h>
+#else
+  #include <Servo.h>
+#endif
 #include <ServoFirmata.h>
 ServoFirmata servo;
 
@@ -33,8 +37,11 @@ I2CFirmata i2c;
 #include <PingFirmata.h>
 PingFirmata ping;
 
-#include <PixelFirmata.h>
-PixelFirmata pixel;
+#if defined(_ESP32_)
+#else
+  #include <PixelFirmata.h>
+  PixelFirmata pixel;
+#endif
 
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
@@ -54,9 +61,11 @@ OneWireFirmata oneWire;
   InterfazPCF8591Firmata PCF8591;
 #endif
 
-
+#if defined(_ESP32_)
+#else
 #include <AccelStepperFirmata.h>
 AccelStepperFirmata stepper;
+#endif
 
 #include <InterfazLCDFirmata.h>
 InterfazLCDFirmata lcd;
@@ -111,10 +120,15 @@ void initFirmata()
     firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
   firmataExt.addFeature(ping);
+#ifndef _ESP32_
   firmataExt.addFeature(pixel);
+#endif
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
+#ifndef _ESP32_  
   firmataExt.addFeature(stepper);
+#endif
+
 #if defined(_PCF8591_)
   firmataExt.addFeature(PCF8591);
 #endif
@@ -157,6 +171,7 @@ void loop()
     #endif
   }
 
-
+#ifndef _ESP32_  
   stepper.update();
+#endif
 }

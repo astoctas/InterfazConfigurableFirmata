@@ -11,6 +11,9 @@
 * License: GNU GPL v2 (see License.txt)
 */
 
+#ifndef _ESP32_
+
+
 #include "lw_ws2812.h"
 
 /*
@@ -161,3 +164,5 @@ w_nop16
   SREG=sreg_prev;
   sei();
 }
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef _ESP32_
+
+
 #include "ws2812.h"
 #include "Arduino.h"
 
@@ -342,4 +345,5 @@ int freeRam () {
   int v;
   return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval);
 }
+#endif
 #endif

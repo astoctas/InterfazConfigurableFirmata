@@ -10,6 +10,9 @@
  *
  */
 
+#ifndef _ESP32_
+
+
 #ifndef WS2812_h
 #define WS2812_h
 
@@ -64,4 +67,5 @@ int freeRam();
 #endif
 
 
+#endif
 #endif

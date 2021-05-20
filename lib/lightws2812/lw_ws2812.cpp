@@ -12,6 +12,8 @@
 * License: GNU GPL v2 (see License.txt)
 */
 
+#ifndef _ESP32_
+
 #include "lw_ws2812.h"
 #include <stdlib.h>
 
@@ -82,3 +84,4 @@ void WS2812::setOutput(uint8_t pin) {
 }
 #endif
 
+#endif
