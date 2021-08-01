@@ -56,6 +56,7 @@
                 "_L293SHIELD_",
                 "MAX_DC_OUTPUTS=4",
                 "_LCD_",
+                "_MODEL_=uno",
                 "F_CPU=16000000L",
                 "ARDUINO_ARCH_AVR",
                 "ARDUINO=10808",
