@@ -89,6 +89,8 @@ void initFirmata()
   firmataExt.addFeature(reporting);
   firmataExt.addFeature(interfaz); // PONER AL FINAL DE LA LISTA
 
+  analogInput.lcd = &lcd;  
+
   Firmata.attach(SYSTEM_RESET, systemResetCallback);
 }
 
