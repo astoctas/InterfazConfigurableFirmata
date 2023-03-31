@@ -12,23 +12,33 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/.pio/build/uno/firmware.elf",
-            "projectEnvName": "uno",
-            "toolchainBinDir": "/home/alejandro/.platformio/packages/toolchain-atmelavr/bin",
+            "executable": "/Users/alejandro/Documents/Interfaz/Software/PlatformIO/InterfazConfigurableFirmata/.pio/build/educabot/firmware.elf",
+            "projectEnvName": "educabot",
+            "toolchainBinDir": "/Users/alejandro/.platformio/packages/toolchain-atmelavr/bin",
             "internalConsoleOptions": "openOnSessionStart",
             "preLaunchTask": {
                 "type": "PlatformIO",
-                "task": "Pre-Debug (uno)"
+                "task": "Pre-Debug (educabot)"
             }
         },
         {
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "/home/alejandro/Documentos/Interfaz2.0/Software/PlatformIO/Projects/190221-104250-nanoatmega328/.pio/build/uno/firmware.elf",
-            "projectEnvName": "uno",
-            "toolchainBinDir": "/home/alejandro/.platformio/packages/toolchain-atmelavr/bin",
+            "executable": "/Users/alejandro/Documents/Interfaz/Software/PlatformIO/InterfazConfigurableFirmata/.pio/build/educabot/firmware.elf",
+            "projectEnvName": "educabot",
+            "toolchainBinDir": "/Users/alejandro/.platformio/packages/toolchain-atmelavr/bin",
             "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "type": "platformio-debug",
+            "request": "launch",
+            "name": "PIO Debug (without uploading)",
+            "executable": "/Users/alejandro/Documents/Interfaz/Software/PlatformIO/InterfazConfigurableFirmata/.pio/build/educabot/firmware.elf",
+            "projectEnvName": "educabot",
+            "toolchainBinDir": "/Users/alejandro/.platformio/packages/toolchain-atmelavr/bin",
+            "internalConsoleOptions": "openOnSessionStart",
+            "loadMode": "manual"
         }
     ]
 }

@@ -32,11 +32,21 @@ ServoFirmata servo;
 #include <I2CFirmata.h>
 I2CFirmata i2c;
 
-#include <PingFirmata.h>
-PingFirmata ping;
+#if defined(_EDUCABOT_)
+  #include <UltrasonicFirmata.h>
+  UltrasonicFirmata ping;
+#else
+  #include <PingFirmata.h>
+  PingFirmata ping;
+#endif
 
-#include <PixelFirmata.h>
-PixelFirmata pixel;
+#if defined(_EDUCABOT_)
+   #include <NeoPixelFirmata.h>
+  NeoPixelFirmata pixel; 
+#else
+  #include <PixelFirmata.h>
+  PixelFirmata pixel;
+#endif
 
 #include <OneWireFirmata.h>
 OneWireFirmata oneWire;
@@ -44,6 +54,15 @@ OneWireFirmata oneWire;
 #if defined(_L293SHIELD_)
   #include <InterfazL293DShieldFirmata.h>
   InterfazL293DShieldFirmata motor;
+#endif
+
+#if defined(_EDUCABOT_)
+  #include <EducabotDCFirmata.h>
+  EducabotDCFirmata motor;
+  #include <Matrix8x8Firmata.h>
+  Matrix8x8Firmata matrix8x8;
+  #include <DHT11Feature.h>
+  DHT11Feature dht11;
 #endif
 
 #if defined(_RASTI_)
@@ -57,8 +76,8 @@ OneWireFirmata oneWire;
 #endif
 
 
-#include <AccelStepperFirmata.h>
-AccelStepperFirmata stepper;
+//#include <AccelStepperFirmata.h>
+//AccelStepperFirmata stepper;
 
 #include <InterfazLCDFirmata.h>
 InterfazLCDFirmata lcd;
@@ -97,8 +116,8 @@ void initTransport()
 {
   // Uncomment to save a couple of seconds by disabling the startup blink sequence.
   Firmata.disableBlinkVersion();
-  // Firmata.begin(57600);
-  Firmata.begin(115200);
+  Firmata.begin(57600);
+  //Firmata.begin(115200);
 }
 
 
@@ -123,9 +142,14 @@ void initFirmata()
   firmataExt.addFeature(pixel);
   firmataExt.addFeature(i2c);
   firmataExt.addFeature(oneWire);
-  firmataExt.addFeature(stepper);
+//  firmataExt.addFeature(stepper);
 #if defined(_PCF8591_)
   firmataExt.addFeature(PCF8591);
+#endif
+#if defined(_EDUCABOT_)
+  firmataExt.addFeature(motor);
+  firmataExt.addFeature(matrix8x8);
+  firmataExt.addFeature(dht11);
 #endif
 #if defined(_L293SHIELD_)
   firmataExt.addFeature(motor);
@@ -164,8 +188,11 @@ void loop()
     #if defined(_PCF8591_)
       PCF8591.report();
     #endif
+    #if defined(_DHT11_)
+      dht11.report();
+    #endif
   }
 
 
-  stepper.update();
+  // stepper.update();
 }
