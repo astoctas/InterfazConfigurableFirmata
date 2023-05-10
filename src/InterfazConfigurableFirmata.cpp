@@ -188,10 +188,12 @@ void loop()
     #if defined(_PCF8591_)
       PCF8591.report();
     #endif
-    #if defined(_DHT11_)
-      dht11.report();
-    #endif
   }
+  #if defined(_DHT11_)
+    if (reporting.elapsed1Hz()) {
+      dht11.report();
+    }
+  #endif
 
 
   // stepper.update();
