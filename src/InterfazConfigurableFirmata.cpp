@@ -63,6 +63,8 @@ OneWireFirmata oneWire;
   Matrix8x8Firmata matrix8x8;
   #include <DHT11Feature.h>
   DHT11Feature dht11;
+  #include <TCS34725Firmata.h>
+  TCS34725Firmata color;
 #endif
 
 #if defined(_RASTI_)
@@ -150,6 +152,7 @@ void initFirmata()
   firmataExt.addFeature(motor);
   firmataExt.addFeature(matrix8x8);
   firmataExt.addFeature(dht11);
+  firmataExt.addFeature(color);
 #endif
 #if defined(_L293SHIELD_)
   firmataExt.addFeature(motor);
