@@ -117,13 +117,7 @@ void systemResetCallback()
 void initTransport()
 {
   // Uncomment to save a couple of seconds by disabling the startup blink sequence.
-  Firmata.disableBlinkVersion();
-  #ifdef _MODEL_
-    Firmata.setFirmwareNameAndVersion(STR(_MODEL_), FIRMATA_FIRMWARE_MAJOR_VERSION, FIRMATA_FIRMWARE_MINOR_VERSION);
-  #else
-    Firmata.setFirmwareVersion(FIRMATA_FIRMWARE_MAJOR_VERSION, FIRMATA_FIRMWARE_MINOR_VERSION);
-  #endif
-    
+  //Firmata.disableBlinkVersion();
   Firmata.begin(57600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for ATmega32u4-based boards and Arduino 101
@@ -135,18 +129,20 @@ void initTransport()
 void initFirmata()
 {
 
+
+
   firmataExt.addFeature(digitalInput);
   firmataExt.addFeature(digitalOutput);
   firmataExt.addFeature(analogInput);
   #ifdef _LCD_
   firmataExt.addFeature(lcd);  // PONER JUSTO ANTES DE LOS SYSEX
   #endif
-  firmataExt.addFeature(analogOutput);
+    firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
   firmataExt.addFeature(ping);
   firmataExt.addFeature(pixel);
   firmataExt.addFeature(i2c);
-//  firmataExt.addFeature(oneWire);
+  firmataExt.addFeature(oneWire);
 //  firmataExt.addFeature(stepper);
 #if defined(_PCF8591_)
   firmataExt.addFeature(PCF8591);
@@ -173,8 +169,10 @@ void initFirmata()
 
 void setup()
 {
-  initTransport();
   initFirmata();
+
+  initTransport();
+
   Firmata.parse(SYSTEM_RESET);
 }
 
