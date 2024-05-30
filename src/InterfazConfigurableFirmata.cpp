@@ -83,7 +83,7 @@ void initFirmata()
   firmataExt.addFeature(analogOutput);
   firmataExt.addFeature(servo);
   firmataExt.addFeature(i2c);
-//  firmataExt.addFeature(oneWire);
+//  firmataExt.addFeature(oneWire); // SE CUELGA LA DLL
   firmataExt.addFeature(stepper);
   firmataExt.addFeature(l293d);
   firmataExt.addFeature(reporting);
